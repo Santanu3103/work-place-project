@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { collection, onSnapshot, query, where } from "@firebase/firestore";
-import { db } from "../../../../../firebasConfig";
+import { db } from "../../../../../firebase";
 import SideBar from '../../../../common/Sidebar'
 
 function Sidebar({handleClick,currentSelectedMessage}) {
@@ -8,10 +8,8 @@ function Sidebar({handleClick,currentSelectedMessage}) {
   const [loading, setLoading] = useState(true);
   const [lastMessages, setLastMessages] = useState(null);
   const fetchData = async () => {
-    const q = query(
-      collection(db, "last_messages"),
-      where("candidate_id", "==", currentUser.uid)
-    );
+    
+    const q = query(collection(db, "last_messages"),where("candidate_id", "==", currentUser.uid));
     const unsubscribe = await onSnapshot(q, (querySnapshot) => {
       let docs = [];
       querySnapshot.forEach((doc) => {

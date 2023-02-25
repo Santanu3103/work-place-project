@@ -1,7 +1,9 @@
 import React,{useContext} from "react";
-import { auth,db } from "../../../firebasConfig";
+import { auth,db } from "../../../firebase";
 import "./AuthenticationPage.css";
-import googleIcon from "../../../acessts/google.icon.png";
+import {Grid} from "@mui/material";
+import NavBar from '../NavBar'
+import googlebtn from '../../../imgs/google-btn.png'
 import { GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import {useNavigate} from 'react-router-dom';
 import {userContext} from '../../../context/userContext'
@@ -91,14 +93,21 @@ const signIn = () => {
 }
 
   return (
-    <div className="auth-container">
+  
+    <Grid container>
+    <Grid className="auth-btn-container" item xs={12}>
+    <NavBar/>
+    </Grid>
+    <Grid className="auth-btn-container" item  xs={8}>
       <h1>Welcome {type}</h1>
-      <h2>SignIn</h2>
-      <button onClick={signIn} >
-        <img alt="icon" src={googleIcon} /> <div>Sign In With Google</div>
-      </button>
-
-    </div>
+      <h3>please Sign IN</h3>
+      <div onClick={signIn} className="auth-btn">
+        <img src={googlebtn} alt="googlebtn" />
+      </div>
+    </Grid>
+    <Grid item  xs={4}>
+    </Grid>
+  </Grid>
   );
 }
 

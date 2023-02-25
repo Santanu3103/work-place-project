@@ -1,21 +1,14 @@
 import { Button, Grid, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "./JobForm.css";
-import {
-  jobTitle,
-  jobType,
-  jobLocation,
-  yearsOfExperience,
-  SkillsDownList,
-  currencyDropDownList,
-} from "../../../../../constants";
+import {jobTitle,jobType,jobLocation,yearsOfExperience,SkillsDownList,currencyDropDownList,} from "../../../../../constants";
 import CustomDropDown from "../../../../common/CustomDropDown";
 import SearchDropDown from "../../../../common/SearchDropDown";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import { v4 as uuidv4 } from "uuid";
 import { Notification } from "../../../../../utils/Notification";
 import { setDoc, doc, getDoc } from "firebase/firestore";
-import { db } from "../../../../../firebasConfig";
+import { db } from "../../../../../firebase";
 import RTE from "../../../../common/RTE";
 
 const innitialValues = {
@@ -32,9 +25,8 @@ const innitialValues = {
   skills: [],
 };
 function JobForm({ setMobileSectionState, selectedJob }) {
-  const [jobData, setJobData] = useState({
-    ...innitialValues,
-  });
+
+  const [jobData, setJobData] = useState({...innitialValues,});
 
   useEffect(() => {
     if (selectedJob) {
@@ -58,20 +50,13 @@ function JobForm({ setMobileSectionState, selectedJob }) {
       // setDoc(docRef,data)
       // docRef(databaseRef, collection, document id)
       if (selectedJob) {
-        await setDoc(
-          doc(db, "jobs", selectedJob.job_id),
-          {
-            ...jobData,
-            createdAt: new Date(),
-          },
-          { merge: true }
-        );
+        await setDoc(doc(db, "jobs", selectedJob.job_id), {...jobData,createdAt: new Date(),},{ merge: true });
+
         Notification({ message: "Job Updated Successfully", type: "success" });
+
       } else {
         let conpanyInfo = {};
-        await getDoc(doc(db, "userInfo", employer_id)).then((docSnap) => {
-          conpanyInfo = docSnap.data();
-        });
+        await getDoc(doc(db, "userInfo", employer_id)).then((docSnap) => { conpanyInfo = docSnap.data()});
 
         await setDoc(doc(db, "jobs", job_id), {
           job_id,
@@ -224,7 +209,6 @@ function JobForm({ setMobileSectionState, selectedJob }) {
               }
             />
           </Grid>
-
           <Grid item xs={12}>
             <button type="submit" className="publish-btn">
               {selectedJob ? "Update" : "Publish"}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { collection, onSnapshot, query, where } from "@firebase/firestore";
-import { db } from "../../../../../firebasConfig";
+import { db } from "../../../../../firebase";
 import SideBar from '../../../../common/Sidebar'
 
 function Sidebar({handleClick,currentSelectedMessage}) {

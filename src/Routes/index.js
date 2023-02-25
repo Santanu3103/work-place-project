@@ -7,8 +7,8 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
-import LandingPage from "../components/pages/LandingPage";
-import AuthenticationPage from "../components/pages/AuthenticationPage";
+import LandingPage from "../components/pages/index";
+import AuthenticationPage from "../components/pages/Auth";
 import CandidateOnboarding from "../components/pages/candidate/CandidateOnboarding";
 import CandidateProfile from "../components/pages/candidate/CandidateProfile";
 import CandidateJobs from "../components/pages/candidate/CandidateJobs";

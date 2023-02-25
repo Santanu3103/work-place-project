@@ -1,13 +1,13 @@
 import { Button, Grid, TextField } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { db,auth } from "../../../../firebasConfig";
+import { db,auth } from "../../../../firebase";
 import "./candidateOnboarding.css";
 import { Notification } from "../../../../utils/Notification";
-import loadingimg from "../.../../../../../acessts/loading.gif";
+import loadingimg from "../.../../../../../assets/loading.gif";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { storage } from "../../../../firebasConfig";
+import { storage } from "../../../../firebase";
 import CustomDropDown from "../../../common/CustomDropDown";
 import SearchDropDown from "../../../common/SearchDropDown";
 import { useNavigate } from "react-router-dom";
@@ -19,6 +19,7 @@ import {
 import {userContext} from '../../../../context/userContext'
 
 function CandidateProfile() {
+  
   const navigate = useNavigate();
   const [state,dispatch]=useContext(userContext)
   const [uploadLoading, setUploadLoading] = useState(0);

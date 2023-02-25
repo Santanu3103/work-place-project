@@ -5,15 +5,15 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA3tZ-qYU70o1NqsNi0TOFUryWHWCH4YHY",
-  authDomain: "work-place-dec.firebaseapp.com",
-  projectId: "work-place-dec",
-  storageBucket: "work-place-dec.appspot.com",
-  messagingSenderId: "903709162750",
-  appId: "1:903709162750:web:b2b362a827230b849339af"
+  apiKey: "AIzaSyCcSjPTnLVN2QTTFfMcEY0_MBP9hefgBOI",
+  authDomain: "workplace-fb6f2.firebaseapp.com",
+  projectId: "workplace-fb6f2",
+  storageBucket: "workplace-fb6f2.appspot.com",
+  messagingSenderId: "846699226908",
+  appId: "1:846699226908:web:dd3833549ab231310afcd9",
+  measurementId: "G-B103JWG5Y7"
 };
 
-// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db= getFirestore(app);

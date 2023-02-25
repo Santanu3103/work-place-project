@@ -7,13 +7,13 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import Logo from "../imgs/logo.png";
 import { useNavigate } from "react-router-dom";
-import ModeToggle from "../components/common/ModeToggle";
+import ToggleButton from "../components/common/ToggleButton";
 import { DarkmodeContext } from "../context/DarkmodeContext";
 const pages = [
   {
@@ -33,7 +33,7 @@ const pages = [
     path: "/candidate/profile",
   },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
 
 function CandidateHoc({ children }) {
   const [state, dispatch] = React.useContext(DarkmodeContext);
@@ -44,17 +44,12 @@ function CandidateHoc({ children }) {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+;
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
   const handleNavigate = (path) => {
     navigate(`${path}`);
@@ -71,7 +66,7 @@ function CandidateHoc({ children }) {
           maxWidth="xl"
         >
           <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            
             <Typography
               variant="h6"
               noWrap
@@ -87,7 +82,7 @@ function CandidateHoc({ children }) {
                 textDecoration: "none",
               }}
             >
-              LOGO
+              <img width="100px" src={Logo} alt="logo" /> 
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -153,7 +148,7 @@ function CandidateHoc({ children }) {
                 textDecoration: "none",
               }}
             >
-              LOGO
+      
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
@@ -173,7 +168,7 @@ function CandidateHoc({ children }) {
 
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
-                <ModeToggle />
+              <ToggleButton />
               </Tooltip>
             </Box>
           </Toolbar>

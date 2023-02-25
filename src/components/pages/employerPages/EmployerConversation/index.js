@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
-import { db } from "../../../../firebasConfig";
+import { db } from "../../../../firebase";
 import React, { useEffect, useState } from "react";
 import MessageArea from "./MessageArea";
 import SideBar from "./SideBar";

@@ -1,5 +1,5 @@
 import "./App.css";
-import Navs from "./Navs";
+import Navs from "./Routes";
 import { UserContextProvider } from "./context/userContext";
 import { DarkmodeContextProvider } from "./context/DarkmodeContext";
 import 'react-notifications-component/dist/theme.css'

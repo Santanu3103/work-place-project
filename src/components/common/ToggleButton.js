@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import {DarkmodeContext} from '../../context/DarkmodeContext'
-function ModeToggle() {
+function ToggleButton() {
   const [state, dispatch] = React.useContext(DarkmodeContext);
 
   const handleModeChange=()=>{
@@ -73,4 +73,4 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   )
 }
 
-export default ModeToggle
+export default ToggleButton

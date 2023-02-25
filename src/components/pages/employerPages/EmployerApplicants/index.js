@@ -6,7 +6,7 @@ import {
   onSnapshot,
   setDoc,
 } from "firebase/firestore";
-import { db } from "../../../../firebasConfig";
+import { db } from "../../../../firebase";
 import CommonTable from "../../../common/CommonTable";
 import { doc, deleteDoc } from "firebase/firestore";
 import { Notification } from "../../../../utils/Notification";

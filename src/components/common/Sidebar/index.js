@@ -11,8 +11,7 @@ function SideBar({ lastMessages, handleClick, currentSelectedMessage }) {
             <div
               key={key}
               className={
-                message.last_message_id ===
-                currentSelectedMessage?.last_message_id
+                message.last_message_id === currentSelectedMessage?.last_message_id
                   ? "selected-card"
                   : "card"
               }

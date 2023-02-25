@@ -7,14 +7,14 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import Logo from "../imgs/logo.png";
 import { useNavigate } from "react-router-dom";
 import { DarkmodeContext } from "../context/DarkmodeContext";
-import ModeToggle from "../components/common/ModeToggle";
+import ModeToggle from "../components/common/ToggleButton";
 
 const pages = [
   {
@@ -35,7 +35,7 @@ const pages = [
   },
 
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
 
 function EmployerHoc({children}) {
   const navigate = useNavigate();
@@ -72,7 +72,7 @@ function EmployerHoc({children}) {
       }}
       maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          
           <Typography
             variant="h6"
             noWrap
@@ -88,7 +88,7 @@ function EmployerHoc({children}) {
               textDecoration: "none",
             }}
           >
-            LOGO
+           <img width="100px" src={Logo} alt="logo" />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

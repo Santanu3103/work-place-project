@@ -2,7 +2,7 @@ import { Label } from "@mui/icons-material";
 import { Button, Grid, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "../../../../firebasConfig";
+import { db } from "../../../../firebase";
 import "./employerOnboarding.css";
 import { Notification } from "../../../../utils/Notification";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-import { storage } from "../../../../firebasConfig";
+import { storage } from "../../../../firebase";
 function EmployerOnboarding() {
   const navigate = useNavigate();
   const [uploadLoading, setUploadLoading] = useState(0);

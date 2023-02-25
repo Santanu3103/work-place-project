@@ -1,0 +1,134 @@
+.outer {
+  width: 268px;
+  height: 308px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  background: #ffffff;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+.jobCard {
+  width: 236px;
+  height: 265px;
+  /* padding: 19px 12px 24px 20px; */
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+.jobCard .company {
+  width: 126px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.company .image {
+}
+.company .name {
+  display: flex;
+  align-items: start;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.company .name h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+  margin: 0;
+  text-align: center;
+
+  color: #000000;
+}
+.company .name p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  margin: 0;
+  color: #000000;
+}
+.jobCard .role {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+.jobCard .role .position {
+  margin-bottom: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 29px;
+  text-align: center;
+
+  color: #000000;
+}
+.jobCard .role .time {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #000000;
+}
+.jobCard .description {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #585858;
+  max-width: 225px;
+  height: 72px;
+}
+.jobCard .apply {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 236px;
+  height: 39px;
+}
+.apply p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.apply .card-btn {
+  background: #f9f9ff;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  width: 102px;
+  height: 39px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+  border: none;
+  text-align: center;
+  transition: 0.5s;
+  color: #4943da;
+}
+.card-btn:hover {
+  color: #fff;
+  background-color: #4943da;
+  border: none;
+  outline: none;
+}

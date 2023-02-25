@@ -13,8 +13,11 @@ function CandidateJobCard({ job,applyonJob }) {
     createdAt,
   } = job;
   return (
-    <div className="jobCard">
-      <Grid container>
+   <Grid container>
+  <Grid container>
+      <Grid item xs={3}>
+         
+        </Grid>
         <Grid item xs={3}>
           <img
             width="70%"
@@ -23,14 +26,13 @@ function CandidateJobCard({ job,applyonJob }) {
             alt="company logo"
           />
         </Grid>
-        <Grid sx={{ textAlign: "left" }} item xs={9}>
+        <Grid sx={{ textAlign: "left" }} item xs={6}>
           <h1>{company_name}</h1>
           <h2>{companyTagLine}</h2>
         </Grid>
       </Grid>
-
       <Grid className="jobCard_details" container spacing={1}>
-        <Grid item xs={12} md={2}>
+        <Grid item xs={9} md={2}>
           {jobTitle}
         </Grid>
         <Grid item xs={2}>
@@ -48,7 +50,9 @@ function CandidateJobCard({ job,applyonJob }) {
           className="apply-btn">Apply</button>
         </Grid>
       </Grid>
-    </div>
+    </Grid>
+    
+   
   );
 }
 

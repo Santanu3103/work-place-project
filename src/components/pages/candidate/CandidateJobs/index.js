@@ -8,7 +8,7 @@ import {
   doc,
   getDoc,
 } from "firebase/firestore";
-import { db } from "../../../../firebasConfig";
+import { db } from "../../../../firebase";
 import CandidateJobCard from "./CandidateJobCard";
 import { v4 as uuid } from "uuid";
 import { Notification } from "../../../../utils/Notification";

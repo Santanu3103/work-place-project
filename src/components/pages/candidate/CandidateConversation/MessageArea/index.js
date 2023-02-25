@@ -2,7 +2,7 @@ import { Button } from '@mui/material'
 import { collection, doc, getDocs, query, setDoc, where } from 'firebase/firestore';
 import React, { useEffect } from 'react';
 import Messagearea from '../../../../common/Messagearea';
-import {db} from '../../../../../firebasConfig';
+import {db} from '../../../../../firebase';
 import { v4 as uuid } from 'uuid';
 
 function MessageArea({allConversations,setSelectedSectionMobile,currentSelectedMessage}) {

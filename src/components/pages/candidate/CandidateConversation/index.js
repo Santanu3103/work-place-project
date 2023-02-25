@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
-import { db } from "../../../../firebasConfig";
+import { db } from "../../../../firebase";
 import React, { useEffect, useState } from "react";
 import MessageArea from "./MessageArea";
 import SideBar from "./SideBar";
@@ -16,15 +16,10 @@ function CandidateConversation() {
     //  where the conversation id is equal to the conversation id of the message
     // subscribe to it
 
-    const q = query(
-      collection(db, "conversations"),
-      where("conversation_id", "==", message.conversation_id)
-    );
+    const q = query(collection(db, "conversations"),where("conversation_id", "==", message.conversation_id));
     const unsubscribe = await onSnapshot(q, (querySnapshot) => {
       let docs = [];
-      querySnapshot.forEach((doc) => {
-        docs.push(doc.data());
-      });
+      querySnapshot.forEach((doc) => {docs.push(doc.data())});
       setAllConversations(docs);
     });
   };
@@ -39,8 +34,7 @@ function CandidateConversation() {
     <Grid container spacing={2}
     sx={{
       maxWidth: "95%",
-      margin: "20px auto",
-      
+      margin: "20px auto",    
     }}
     >
       <Grid
@@ -54,7 +48,7 @@ function CandidateConversation() {
         xs={12}
         md={3}
       >
-        <SideBar currentSelectedMessage={currentSelectedMessage} handleClick={handleClick} />
+      <SideBar currentSelectedMessage={currentSelectedMessage} handleClick={handleClick} />
       </Grid>
       <Grid
         sx={{

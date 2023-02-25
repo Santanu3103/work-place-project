@@ -4,7 +4,7 @@ import "./SideBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import SidebarCard from "./SidebarCard";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
-import { db } from "../../../../../firebasConfig";
+import { db } from "../../../../../firebase";
 
 function Sidebar({ setMobileSectionState, selectedJob, setSelectedJob }) {
   const [jobs, setJobs] = useState(null);
@@ -22,10 +22,7 @@ function Sidebar({ setMobileSectionState, selectedJob, setSelectedJob }) {
     let usetInfo = JSON.parse(localStorage.getItem("user"));
     let employer_id = usetInfo.uid;
 
-    const q = query(
-      collection(db, "jobs"),
-      where("employer_id", "==", employer_id)
-    );
+    const q = query( collection(db, "jobs"), where("employer_id", "==", employer_id));
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const jobs = [];
@@ -40,10 +37,7 @@ function Sidebar({ setMobileSectionState, selectedJob, setSelectedJob }) {
 
   useEffect(() => {
     if (search) {
-      const filteredJobs = jobs.filter((job) =>
-        job.jobTitle.toLowerCase().includes(search.toLowerCase())||
-        job.jobLocation.toLowerCase().includes(search.toLowerCase())
-      );
+  const filteredJobs = jobs.filter((job) =>job.jobTitle.toLowerCase().includes(search.toLowerCase())||job.jobLocation.toLowerCase().includes(search.toLowerCase()));
       setJobSearch(filteredJobs);
     } else {
       setJobSearch(jobs);
@@ -108,9 +102,7 @@ function Sidebar({ setMobileSectionState, selectedJob, setSelectedJob }) {
             );
           })}
         </div>
-      ) : (
-        <div>loading</div>
-      )}
+      ) : ( <div>loading</div> )}
     </div>
   );
 }

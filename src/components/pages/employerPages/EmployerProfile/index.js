@@ -2,7 +2,7 @@ import { Label } from "@mui/icons-material";
 import { Button, Divider, Grid, TextField } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import { auth, db } from "../../../../firebasConfig";
+import { auth, db } from "../../../../firebase";
 import "./employerProfile.css";
 import { Notification } from "../../../../utils/Notification";
 import { useNavigate } from "react-router-dom";
@@ -12,9 +12,9 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-import { storage } from "../../../../firebasConfig";
+import { storage } from "../../../../firebase";
 import { async } from "@firebase/util";
-import loadingimg from "../.../../../../../acessts/loading.gif";
+import loadingimg from "../.../../../../../assets/loading.gif";
 import {userContext} from '../../../../context/userContext'
 
 function EmployerProfile() {

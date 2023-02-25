@@ -2,7 +2,7 @@ import { Label } from "@mui/icons-material";
 import { Button, Grid, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "../../../../firebasConfig";
+import { db } from "../../../../firebase";
 import "./candidateOnboarding.css";
 import { Notification } from "../../../../utils/Notification";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
@@ -12,7 +12,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-import { storage } from "../../../../firebasConfig";
+import { storage } from "../../../../firebase";
 import CustomDropDown from "../../../common/CustomDropDown";
 import SearchDropDown from "../../../common/SearchDropDown";
 import { useNavigate } from "react-router-dom";
